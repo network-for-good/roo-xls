@@ -217,7 +217,7 @@ module Roo
         when :date
           v
         when :datetime
-          @cell[sheet][key] = DateTime.new(v.year, v.month, v.day, v.hour, v.min, v.sec)
+          @cell[sheet][key] = DateTime.new(v.year, v.month, v.day, v.hour, v.min, v.sec, (v.to_time.utc_offset/60/60).to_s)
         when :percentage
           v.to_f
         when :time
